@@ -1,3 +1,4 @@
+import maincss from './assets/css/main.scss'
 class Person {
   constructor(cfg) {
     this.name = cfg.name;
