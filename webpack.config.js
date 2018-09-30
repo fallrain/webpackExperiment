@@ -29,7 +29,8 @@ module.exports = {
     ]
   },
   devServer: {
-    port: 9999
+    port: 9999,
+    quiet: true,//不在控制台打印经过编译的文件等信息friendly-errors-webpack-plugin
   },
   plugins: [
     htmlWebpackPlugin
