@@ -1,11 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
   template: path.resolve(__dirname, './index.html'),
   filename: 'index.html',
   hash: true
 });
-module.exports = {
+const webpackCfg = {
   mode: 'development',
   entry: './src/index.js',
   output: {
@@ -36,3 +37,12 @@ module.exports = {
     htmlWebpackPlugin
   ]
 };
+webpackCfg.plugins.push(new FriendlyErrorsPlugin({
+  compilationSuccessInfo: {
+    messages: [`Your application is running here: http://localhost:${webpackCfg.devServer.port}`],
+  },
+  onErrors: function (severity, errors) {
+    console.log('errors:',errors);
+  },
+}));
+module.exports = webpackCfg;
