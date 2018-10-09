@@ -2,18 +2,25 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackConfigName = 'webpack.' + process.env.env + '.config';
 const webpackEnvCfg = require('./' + webpackConfigName);
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');//提取css
 const webpack = require('webpack');
+let splitCssLoader;
+if (process.env.env === 'dev') {
+  splitCssLoader = 'style-loader';
+} else {
+  splitCssLoader = MiniCssExtractPlugin.loader;
+}
 const webpackCfg = {
   mode: 'development',
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/index.js',
-    another: './src/assets/component/Grid.js'
+    another: './src/assets/component/Grid.js'//多入口
   },
   devtool: process.env.env === 'dev' ? 'cheap-eval-source-map' : 'source-map',
   output: {
     path: path.resolve(__dirname, '../dist'),//必须绝对路径
-    filename: '[name].dist.js'
+    filename: '[name].[chunkhash].js'
   },
   module: {
     rules: [
@@ -26,11 +33,11 @@ const webpackCfg = {
       },
       {
         test: /\.(sass|scss)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [splitCssLoader, 'css-loader', 'sass-loader']
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [splitCssLoader, 'css-loader']
       },
       {
         test: /\.(eot|svg|ttf|woff)$/,
