@@ -22,6 +22,11 @@ const webpackCfg = {
     path: path.resolve(__dirname, '../dist'),//必须绝对路径
     filename: '[name].[chunkhash].js'
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '../src')
+    }
+  },
   module: {
     rules: [
       {
@@ -41,8 +46,15 @@ const webpackCfg = {
       },
       {
         test: /\.(eot|svg|ttf|woff)$/,
-        loader: 'url-loader'
-      }]
+        loader: 'url-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        loader: 'url-loader',
+        exclude: /node_modules/,
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
