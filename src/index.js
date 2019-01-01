@@ -11,7 +11,7 @@ class App extends React.Component {
         {process.envCfg.name}
         <img src={'/src/assets/img/plugin.png'} alt=""/>
         <div className={cssmodule.app}>
-          <div className="a">dasdas</div>
+          <div className={maincss['bbqqq-cc']}>dasdas</div>
         </div>
         <Grid/>
       </div>
