@@ -42,7 +42,7 @@ const webpackCfg = {
       },
       {
         test: /\.css$/,
-        use: [splitCssLoader, 'css-loader']
+        use: [splitCssLoader, 'css-loader?modules']
       },
       {
         test: /\.(eot|svg|ttf|woff)$/,
