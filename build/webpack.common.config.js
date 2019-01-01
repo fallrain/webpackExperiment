@@ -38,7 +38,12 @@ const webpackCfg = {
       },
       {
         test: /\.(sass|scss)$/,
-        use: [splitCssLoader, 'css-loader?modules', 'sass-loader']
+        use: [splitCssLoader, {
+          loader: 'css-loader',
+          options: {
+            modules: true
+          }
+        }, 'sass-loader']
       },
       {
         test: /\.css$/,

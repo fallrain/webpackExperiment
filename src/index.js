@@ -12,6 +12,7 @@ class App extends React.Component {
         <img src={'/src/assets/img/plugin.png'} alt=""/>
         <div className={cssmodule.app}>
           <div className={maincss['bbqqq-cc']}>dasdas</div>
+          <div className={'bbqqq'}>aaaa</div>
         </div>
         <Grid/>
       </div>
