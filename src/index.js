@@ -1,5 +1,5 @@
 import maincss from '@/assets/css/main.scss';
-//import '@/assets/font/iconfont.css';
+//import '@/assets/font/iconfont.cs1s';
 import React from 'react';
 import ReactDom from 'react-dom';
 import Grid from '@/assets/component/Grid';
