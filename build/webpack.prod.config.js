@@ -16,7 +16,8 @@ const webpackCfg = merge(webpackCommonCfg, {
         //dry: false
       }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'//contenthash保证css的hash不会随着js的变化而变化
+      filename: '[name].[contenthash].css',//contenthash保证css的hash不会随着js的变化而变化
+      chunkFilename: "[id].[contenthash].css"
     })
   ],
   optimization: {
