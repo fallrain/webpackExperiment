@@ -2,8 +2,10 @@
 //import '@/assets/font/iconfont.cs1s';
 import React from 'react';
 import ReactDom from 'react-dom';
-import Grid from '../gitcomon/component/Grid';
-
+import Grid from './component/Grid';
+// const Grid = import(/* webpackChunkName:"rightschinagift" */'../gitcomon/component/Grid');
+import Framer from '@/component/framer';
+import Login from '@/view/login/login';
 if (1) {
   import ('@/assets/css/cssmodule.css');
 } else {
@@ -14,11 +16,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="c-red iconfont icon-rili">
-        {process.envCfg.name}
+        <Framer/>
+        <Login/>
         <img src={'/src/assets/img/plugin.png'} alt=""/>
         <div className={'app'}>
-          <div className={'bbqqq-cc'}>dasdas</div>
-          <div className={'bbqqq'}>aaaa</div>
+          <div className={'bbqqq-cc'}>dasda1s</div>
+          <div className={'bbqqq a'}>aaaa</div>
         </div>
         <Grid/>
       </div>
