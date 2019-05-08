@@ -6,7 +6,7 @@ export default class Grid extends React.Component {
       <table>
         <thead>
         <tr>
-          <th>姓名</th>
+          <th>姓名11111111</th>
         </tr>
         </thead>
         <tbody>
