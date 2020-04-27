@@ -28,7 +28,7 @@ const webpackCfg = {
   mode: 'development',
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/index.js',
+    app: './src/index',
     another: 'xlsx'// 多入口
   },
   devtool: process.env.env === 'dev' ? 'cheap-eval-source-map' : 'source-map',

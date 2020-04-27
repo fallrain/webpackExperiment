@@ -40,7 +40,7 @@ export default class Grid extends React.Component {
     return (
       <div>
         <img src={state.imgSrc} />
-        <ReactCoreImageUpload
+        {/* <ReactCoreImageUpload
           text="上传"
           inputOfFile="files"
           url="./api/upload.php"
@@ -49,7 +49,7 @@ export default class Grid extends React.Component {
           compress={90}
           isXhr
           imageuploading={imageChanged}
-        />
+        /> */}
         <a href="">这是table</a>
         <table>
           <thead>

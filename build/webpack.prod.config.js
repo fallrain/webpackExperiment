@@ -5,6 +5,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');// 提取css
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');// 压缩js
 const webpackCommonCfg = require('./webpack.common.config');
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+
+const smp = new SpeedMeasurePlugin();
 
 const webpackCfg = merge(webpackCommonCfg, {
   mode: 'production',
@@ -74,4 +77,4 @@ const webpackCfg = merge(webpackCommonCfg, {
     ]
   },
 });
-module.exports = webpackCfg;
+module.exports = smp.wrap(webpackCfg);

@@ -10,8 +10,8 @@
           ]
         }
       }
-    ],
-    [
+    ],[
+
       "@babel/preset-react",
       {
         // default pragma is React.createElement
@@ -40,6 +40,9 @@
     //class内箭头函数可用
     [
       "@babel/plugin-proposal-class-properties"
+    ],
+    [
+      "@babel/plugin-transform-runtime"
     ]
   ]
 }
